@@ -10,11 +10,13 @@ export default function Home() {
   useEffect(() => {
     const fetchPoints = async () => {
       try {
-        const data = await axios.get('/api/globalStats')
-        console.log('data from GET Request', data?.data?.globalStats?.eigenPoints)
-        if (data?.data?.globalStats?.eigenPoints) {
-          setPoints(data?.data?.globalStats?.eigenPoints)
-        }
+        const data = await axios.get('/api/eigenPoints')
+        console.log('data from GET Request', data.data.datetime)
+        setPoints(data.data.datetime)
+        // console.log('data from GET Request', data?.data?.globalStats?.eigenPoints)
+        // if (data?.data?.globalStats?.eigenPoints) {
+        //   setPoints(data?.data?.globalStats?.eigenPoints)
+        // }
       } catch (error) {
         console.log(error)
       }

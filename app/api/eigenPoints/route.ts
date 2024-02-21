@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const dynamic = 'force-dynamic'
 
-export async function GET(res: NextResponse) {
+export async function GET() {
   try {
     console.log('cron start')
     // eslint-disable-next-line max-len

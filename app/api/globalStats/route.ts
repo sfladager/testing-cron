@@ -11,8 +11,6 @@ export async function GET() {
       },
     })
 
-    console.log('globalStatsRes', globalStatsRes)
-
     const globalStats = globalStatsRes
 
     if (!globalStats) {

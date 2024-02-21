@@ -1,13 +1,19 @@
 import { NextResponse } from 'next/server'
 import prisma from '../../../prisma/prisma'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
-    const globalStatsRes = await prisma.globalStats.findMany()
+    const globalStatsRes = await prisma.globalStats.findUnique({
+      where: {
+        id: 'clrtdtxf40002jy764kilz9v7',
+      },
+    })
 
     console.log('globalStatsRes', globalStatsRes)
 
-    const globalStats = globalStatsRes[0]
+    const globalStats = globalStatsRes
 
     if (!globalStats) {
       return NextResponse.json({ message: 'Not Found'}, { status: 404})

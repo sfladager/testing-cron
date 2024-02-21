@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPoints = async () => {
       try {
-        const data = await axios.get('/api/eigenPoints')
+        const data = await axios.get('/api/globalStats')
         console.log('data from GET Request', data?.data?.globalStats?.eigenPoints)
         if (data?.data?.globalStats?.eigenPoints) {
           setPoints(data?.data?.globalStats?.eigenPoints)
